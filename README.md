@@ -16,32 +16,21 @@
 
 ## <b> 3rd Homework </b> 
 - <b> Task:  </b> ARC - Maps <br/>
-<b> ARC: </b> Swift uses Automatic Reference Counting (ARC) to track and manage your app’s memory usage. In most cases, this means that memory management “just works” in Swift, and you don’t need to think about memory management yourself. ARC automatically frees up the memory used by class instances when those instances are no longer needed.<br/>
-<b>Strong Reference Cycles Between Class Instances</b><br/>
-Here’s an example of how a strong reference cycle can be created by accident. This example defines two classes called Person and Apartment, which model a block of apartments and its residents: <br/>
-```
-class Person {
-    let name: String
-    init(name: String) { self.name = name }
-    var apartment: Apartment?
-    deinit { print("\(name) is being deinitialized") }
-}
+<b> ARC: </b> Every time you create a new instance of a class, ARC allocates a chunk of memory to store information about that instance. This memory holds information about the type of the instance, together with the values of any stored properties associated with that instance. <br/>
+Additionally, when an instance is no longer needed, ARC frees up the memory used by that instance so that the memory can be used for other purposes instead. This ensures that class instances don’t take up space in memory when they’re no longer needed.<br/>
+However, if ARC were to deallocate an instance that was still in use, it would no longer be possible to access that instance’s properties, or call that instance’s methods. Indeed, if you tried to access the instance, your app would most likely crash.<br/>
+To make sure that instances don’t disappear while they’re still needed, ARC tracks how many properties, constants, and variables are currently referring to each class instance. ARC will not deallocate an instance as long as at least one active reference to that instance still exists.<br/>
+To make this possible, whenever you assign a class instance to a property, constant, or variable, that property, constant, or variable makes a strong reference to the instance. The reference is called a “strong” reference because it keeps a firm hold on that instance, and doesn’t allow it to be deallocated for as long as that strong reference remains.
 
-
-class Apartment {
-    let unit: String
-    init(unit: String) { self.unit = unit }
-    var tenant: Person?
-    deinit { print("Apartment \(unit) is being deinitialized") }
-}
-``` 
-<br/>
-Unfortunately, linking these two instances creates a strong reference cycle between them. The Person instance now has a strong reference to the Apartment instance, and the Apartment instance has a strong reference to the Person instance. Therefore, when you break the strong references held by the john and unit4A variables, the reference counts don’t drop to zero, and the instances aren’t deallocated by ARC. <br/>
-Swift provides two ways to resolve strong reference cycles when you work with properties of class type: weak references and unowned references.
-<br/>
-<b>Weak References: </b> A weak reference is a reference that doesn’t keep a strong hold on the instance it refers to, and so doesn’t stop ARC from disposing of the referenced instance. This behavior prevents the reference from becoming part of a strong reference cycle. You indicate a weak reference by placing the weak keyword before a property or variable declaration. <br/>
-The Person instance still has a strong reference to the Apartment instance, but the Apartment instance now has a weak reference to the Person instance. This means that when you break the strong reference held by the john variable by setting it to nil, there are no more strong references to the Person instance.
-
+## <b> Group Homework </b> 
+- <b>  Task:  </b> Pokeman App using PokeAPI.  <br/>
+- <b> Design:  </b> [Here](https://www.figma.com/file/DwPu6EVf5Jr4vDUVeRXXUJ/Pokédex-(Community)?node-id=1017%3A431&mode=dev) . <br/>
+- <b> App Screenshot:  </b>  <br/>
+<p align="center">
+  <img src="/assets/pokemon-1.png" width="200" />
+  <img src="/assets/pokemon-2.png" width="200" />
+  <img src="/assets/pokemon-3.png" width="200" />
+</p><br/>
 
 
 
