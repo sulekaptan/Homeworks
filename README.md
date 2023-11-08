@@ -1,4 +1,4 @@
-#  iOS Homeworks
+#  Pazarama iOS Bootcamp Homeworks
 My assignments at iOS Bootcamp organized by Pazarama and Coderspace. For bootcamp notes 👉 https://github.com/sulekaptan/Pazarama-iOS-Bootcamp
 ## <b> 1st Homework </b> 
 - <b>  Task:  </b> Multiple CollectionView and TableView usage. <br/>
@@ -23,7 +23,7 @@ However, if ARC were to deallocate an instance that was still in use, it would n
 To make sure that instances don’t disappear while they’re still needed, ARC tracks how many properties, constants, and variables are currently referring to each class instance. ARC will not deallocate an instance as long as at least one active reference to that instance still exists.<br/>
 To make this possible, whenever you assign a class instance to a property, constant, or variable, that property, constant, or variable makes a strong reference to the instance. The reference is called a “strong” reference because it keeps a firm hold on that instance, and doesn’t allow it to be deallocated for as long as that strong reference remains.
 
-## <b> Group Homework </b> 
+## <b> Group Project </b> 
 - <b>  Task:  </b> Pokeman App using PokeAPI.  <br/>
 - <b> Design:  </b> [Here](https://www.figma.com/file/DwPu6EVf5Jr4vDUVeRXXUJ/Pokédex-(Community)?node-id=1017%3A431&mode=dev) . <br/>
 - <b> App Screenshot:  </b>  <br/>
@@ -33,6 +33,13 @@ To make this possible, whenever you assign a class instance to a property, const
   <img src="/assets/pokemon-3.png" width="200" />
 </p><br/>
 
+## <b> Final Project </b> 
+- <b>  Task:  </b> Movie App using OmdbAPI (not completed) <br/>
+- <b> App Screenshot:  </b>  <br/>
+<p align="center">
+  <img src="/assets/movie-1.png" width="200" />
+  <img src="/assets/movie-2.png" width="200" />
+</p><br/>
 
 
 
